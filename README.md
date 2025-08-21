@@ -1,5 +1,16 @@
 Cómo jugar al Ajedrez
 
+El ajedrez es un juego de mesa jugado entre dos personas, que simula una batalla entre dos ejércitos.
+
+Para jugar al ajedrez, los jugadores precisan, como mínimo, un tablero de ajedrez y las piezas. El reloj de ajedrez sólo es necesario en caso de que los jugadores decidan jugar una partida por tiempo; a menudo, los jugadores también utilizan planillas para anotar sus jugadas. 
+
+El reloj de ajedrez es una herramienta que marca el tiempo restante de cada jugador.
+
+Las piezas
+Hay seis tipos de piezas de ajedrez: peón, caballo, alfil, torre, dama y rey. Cada una de estas piezas mueve de forma distinta y tiene un valor distinto. 
+
+El tablero de ajedrez tiene 64 casillas, organizadas en un cuadrado de ocho por ocho. El tablero es cuadriculado, con casillas claras y oscuras; asimismo, el tablero se divide en filas y columnas. 
+
 Cómo configurar el tablero de ajedrez
 Al comienzo de la partida, cada jugador debe tener una casilla blanca (o de color claro) en la parte inferior derecha del tablero.
 
