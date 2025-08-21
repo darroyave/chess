@@ -86,14 +86,14 @@ No hay suficientes piezas en el tablero para forzar un jaque mate (ejemplo: un R
 Un jugador declara Tablas si la misma posición se repite tres veces (aunque no necesariamente tres veces seguidas)
 Se han efectuado 50 movimientos y ninguno de los jugadores ha movido un peón ni capturado una pieza
 
-Paso 6. Estudia las estrategias básicas del ajedrez
+Estudia las estrategias básicas del ajedrez
 Hay cuatro cosas sencillas que todo jugador de ajedrez debe saber:
 
 Protege a tu rey
 Desplaza a tu rey hacia la esquina del tablero, porque suele ser un lugar más seguro. No tardes en hacer el enroque. Por lo general, deberías enrocarte tan rápido como sea posible. Recuerda que no importa lo cerca que estés de dar jaque mate a tu rival si antes van a dar jaque mate a tu propio rey.
 
 No regales piezas
-¡No pierdas piezas por falta de atención! Cada pieza es valiosa en sí misma y no podrás ganar una partida si no tienes piezas para dar jaque mate. Hay un sistema fácil que la mayoría de jugadores utiliza para hacer un seguimiento del valor relativo de cada pieza de ajedrez. ¿Cuánto valen las piezas de ajedrez?
+Cada pieza es valiosa en sí misma y no podrás ganar una partida si no tienes piezas para dar jaque mate. Hay un sistema fácil que la mayoría de jugadores utiliza para hacer un seguimiento del valor relativo de cada pieza de ajedrez. ¿Cuánto valen las piezas de ajedrez?
 
 Un peón vale 1
 Un caballo vale 3
