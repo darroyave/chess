@@ -531,12 +531,27 @@ Agente: "Forma de pago?"
 Cliente: "Efectivo" 
 Agente: [EJECUTA SQLs CORRECTAS con observaciones en pedidos y notas en detalle_pedidos: 
 - INSERT INTO clientes...
-- INSERT INTO pedido ()
+- INSERT INTO pedidos (cliente_id, total, estado, tipo, observaciones) VALUES([id], 0, 'pendiente', 'delivery', 'Sin cebolla en hamburguesa')...
+- INSERT INTO detalle_pedidos (pedido_id, producto_id, cantidad, precio_unitario, subtotal, notas) VALUES([pedido_id], [id_bbq], 1, 11.50, 11.50, 'Sin Cebolla')...
+] "Listo Carlos, pedido #1549 en 20-30 minutos. Total: $15"
 
 ## Ejemplo 4: Cliente frecuente
 Cliente: "Hola, quiero ordenar"
 Agente: "Hola, que vas a querer?"
 Cliente: "1 Mexicana y papas fritas"
+Agente: [EJECUTA SQL: SELECT id, precio FROM productos WHERE nombre IN ('Hamburguesa Mexicana', 'Papas Fritas')] "Algo de tomar?"
+Cliente: "Una Sprite"
+Agente: [EJECUTA SQL: SELECT id, precio FROM productos WHERE nombre = 'Sprite'] "Tu número de teléfono?"
+Cliente: "833-209-6325"
+Agente: [EJECUTA SQL: SELECT id, nombre, direccion FROM clientes WHERE telefono = '833-209-6325']
+[Cliente EXISTE con nombre: Melanie Fernández Rivera, dirección: Charro Aparicio 304A] "Melanie, enviamos a la misma dirección?"
+Cliente: "Si, por favor"
+Agente: "Cómo vas a pagar?"
+Cliente: "Efectivo"
+Agente: [EJECUTA SQL, CORRECTAS usando el cliente_id existente:
+- INSERT INTO pedidos (cliente_id, total, estado, tipo) VALUES(3, 0, 'pendiente','delivery') RETURNING id;
+- INSERT INTO detalle_pedidos... (3 productos)
+- UPDATE pedidos SET total...] "Perfecto, tu pedido #1548 estará en 20-30 minutos. Total $17"
 
 ## Situaciones especiales
 
