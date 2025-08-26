@@ -140,7 +140,7 @@ RETURNING id; -- GUARDA este pedido_id
 -- NOTA: El campo 'notas' SI existe en detalle_pedidos (no en pedidos)
 INSERT INTO detalle_pedidos (pedido_id, producto_id, cantidad, precio_unitario, subtotal, notas)
 VALUES([pedido_id_del_paso_3], [id_producto_1], [cantidad], [precio], [cantidad*precio], '[notas_del_producto]'),
-VALUES([pedido_id_del_paso_3], [id_producto_2], [cantidad], [precio], [cantidad*precio], '[notas_del_producto]');
+      ([pedido_id_del_paso_3], [id_producto_2], [cantidad], [precio], [cantidad*precio], '[notas_del_producto]');
 
 -- PASO 5: Actualizar el total del pedido:
 UPDATE pedidos
@@ -233,7 +233,6 @@ La base de datos contiene los siguientes tablas principales:
 - **stock_actual**: cantidad en inventario
 - **stock_minimo**: cantidad mínima requerida
 - **costo_unitario**: costo por unidad
-- **proveedor_id**: referencia al proveedor
 
 ### Tabla: recetas
 - **id**: identificador único
@@ -244,7 +243,6 @@ La base de datos contiene los siguientes tablas principales:
 ### Tabla: pedidos
 - **id**: número de pedido
 - **cliente_id**: referencia al cliente
-- **empleado_id**: referencia al empleado (puede ser NULL)
 - **fecha_hora**: timestamp del pedido (default CURRENT_TIMESTAMP)
 - **tipo**: tipo de pedido (delivery, pickup, etc.) - puede ser NULL
 - **estado**: pendiente, en_preparacion, listo, entregado, cancelado (default 'pendiente')
@@ -267,7 +265,6 @@ La base de datos contiene los siguientes tablas principales:
 - **telefono**: número de contacto
 - **email**: correo electrónico (puede ser NULL)
 - **direccion**: dirección de entrega
-- **created_id**: timestamp de creación (default CURRENT_TIMESTAMP)
 
 ## Ejemplos de consultas SQL CORREGIDAS
 
@@ -280,13 +277,13 @@ WHERE LOWER(nombre) LIKE '%bbq%'
 OR LOWER(nombre) LIKE '%ranch%'
 OR LOWER(nombre) LIKE '%mexicana%'
 OR LOWER(nombre) LIKE '%clasica%' 
-AND disponible = TRUE;
+AND disponible = true;
 
 -- Una vez identificado el nombre exacto, usar en consultas posteriores 
-SELECT * FROM productos WHERE nombre = 'Hamburguesa BBQ ranch';
+SELECT * FROM productos WHERE nombre = 'Hamburguesa BBQ Ranch';
 
 -- Una vez identificado el nombre exacto, usar en consultas posteriores
-SELECT * FROM productos WHERE nombre = ´Hamburguesa BBQ Ranch´;
+SELECT * FROM productos WHERE nombre = 'Hamburguesa BBQ Ranch';
 '''
 
 ### 1. Mostrar el menú por categoría 
@@ -305,7 +302,7 @@ SELECT p.nombre, p.disponible,
           END , ',  ') as ingredientes_faltantes
 FROM productos p
 JOIN recetas r ON p.id = r.producto_id
-JOIN ingredientes u ON r.ingrediente_id = i.id
+JOIN ingredientes i ON r.ingrediente_id = i.id
 WHERE p.nombre = 'Hamburguesa BBQ Ranch' -- Nombre COMPLETO
 GROUP BY p.id, p.nombre, p.disponible;
 '''
@@ -313,7 +310,7 @@ GROUP BY p.id, p.nombre, p.disponible;
 ### 3. Crear un nuevo pedido (PROCESO COMPLETO CORREGIDO)
 '''sql
 -- Primero verificar si el cliente existe por teléfono
-SELECT id, nombre, direccion FROM clientes WHERE telefono = '555-0123';
+SELECT id, nombre, direccion FROM clientes WHERE telefono = '3176994380';
 
 -- Si NO existe, crear nuevo cliente
 INSERT INTO clientes (nombre, telefono, direccion)
@@ -326,7 +323,7 @@ WHERE nombre IN ('Hamburguesa BBQ Ranch', 'Papas Fritas', 'Cola Cola')
 AND disponible = true;
 
 -- Crear el pedido (SIN metodo_pago ni notas - usa observaciones)
-INSER INTO pedidos (cliente_id, total, estado, tipo, observaciones)
+INSERT INTO pedidos (cliente_id, total, estado, tipo, observaciones)
 VALUES ([cliente_id], 0, 'pendiente', 'delivery', 'Sin cebolla en la hamburguesa')
 RETURNING id;
 
