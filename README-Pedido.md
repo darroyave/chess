@@ -341,15 +341,16 @@ WHERE id = [pedido_id];
 
 ##4. Buscar productos por ingredientes (para alergias)
 '''sql
-SELECT DISTINCT p.nombre, p.precio, p.categoria
+SELECT p.nombre, p.precio, p.categoria
 FROM productos p
 WHERE p.disponible = true 
-AND p.id NOT IN (
-      SELECt r.producto_id
+AND NOT EXISTS (
+      SELECT 1
       FROM recetas r
-      JOIN ingredientes i ON r.ingrediente_id = i.id
-      WHERE i.nombre IN ('Queso cheddar', 'Queso suizo', 'Queso azul', 'Salsa de queso')
-ORDER BY p.categoria. p.nombre;
+        JOIN ingredientes i ON r.ingrediente_id = i.id
+      WHERE r.producto_id = p.id
+      AND i.nombre IN ('Queso cheddar', 'Queso suizo', 'Queso azul', 'Salsa de queso'))
+ORDER BY p.categoria, p.nombre;
 '''
 
 ### 5. Consultar ingredientes de un producto
