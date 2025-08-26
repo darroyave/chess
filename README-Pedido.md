@@ -448,14 +448,14 @@ ORDER BY fecha_hora;
 
 ### 14. Verificar historial de pedidos de un cliente
 '''sql 
-SELECT p.id, p.fecha_hora, p.total, p.estado, p.tipo
+SELECT p.id, p.fecha_hora, p.total, p.estado, p.tipo,
      STRING_AGG(pr.nombre || ' x' || dp.cantidad, ', ') as productos
 FROM pedidos p
-JOIN detalle_pedidos dp ON o.id = dp_pedido_id
+JOIN detalle_pedidos dp ON p.id = dp.pedido_id
 JOIN productos pr ON dp.producto_id = pr.id
 JOIN clientes c ON p.cliente_id = c.id
 WHERE c.telefono = '555-0123' 
-ORDER BY p.id, p.fecha_hora, p.total, p.estado, p.tipo
+GROUP BY p.id, p.fecha_hora, p.total, p.estado, p.tipo 
 ORDER BY p.fecha_hora DESC
 LIMIT 5;
 ''' 
@@ -465,7 +465,7 @@ LIMIT 5;
 UPDATE clientes
 SET direccion = 'Nueva calle 700'
 WHERE telefono = '555-0123'
-RETURNIN id, nombre;
+RETURNING id, nombre;
 ''' 
 
 ### 16. Buscar clientes por nombre parcial
