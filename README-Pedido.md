@@ -336,7 +336,7 @@ VALUES
 -- Actualizar el total del pedido
 UPDATE pedidos
 SET total = (SELECT SUM(subtotal) FROM detalle_pedidos WHERE pedido_id = [pedido_id])
-WHERE id = [pedido_id]:
+WHERE id = [pedido_id];
 '''
 
 ##4. Buscar productos por ingredientes (para alergias)
@@ -348,7 +348,7 @@ AND p.id NOT IN (
       SELECt r.producto_id
       FROM recetas r
       JOIN ingredientes i ON r.ingrediente_id = i.id
-      WHERE i.nombre IN ('Queso chedar', 'Quedo suizo', 'Queso azul', 'Salsa de queso')
+      WHERE i.nombre IN ('Queso cheddar', 'Queso suizo', 'Queso azul', 'Salsa de queso')
 ORDER BY p.categoria. p.nombre;
 '''
 
@@ -402,7 +402,7 @@ ORDER BY
 ### 9. Registrar nuevo cliente
 '''sql
 INSERT INTO clientes (nombre, telefono, direccion)
-VALUES('María Garcia', '555-0124', ''Av. Libertador 456')
+VALUES('María Garcia', '555-0124', 'Av. Libertador 456')
 RETURNING id;
 '''
 
@@ -412,7 +412,7 @@ SELECT p.nombre, p.descripcion, p.precio
 FROM productos p
 WHERE p.disponible = true
 AND p.id NOT IN (
-     SELECT DISTINCT r.product_id
+     SELECT DISTINCT r.producto_id
      FROM recetas r
     JOIN ingredientes i ON r.ingrediente_id = i.id
     WHERE i.nombre IN ('Carne de res', 'Carne de pollo', 'Bacon',
