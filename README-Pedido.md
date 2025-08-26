@@ -384,7 +384,7 @@ GROUP BY p.id, p.fecha_hora, p.estado, p.total, p.observaciones;
 
 ### 8. Mostrar categorías disponibles
 '''sql
-SELECT DISTINCT categoria, COUNT(*) as productos_disponibles
+SELECT categoria, COUNT(*) as productos_disponibles
 FROM productos
 WHERE disponible = true
 GROUP BY categoria
