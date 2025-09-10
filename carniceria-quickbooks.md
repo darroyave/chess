@@ -65,11 +65,17 @@ Trabajamos con dos tablas principales en Supabase:
 Tabla pedidos (orden principal):
 
 id: Número único automático del pedido (se genera solo)
+
 fecha_hora: Fecha y hora automática del pedido
+
 tipo: Tipo de pedido (ej: "whatsapp", "local")
+
 estado: Estado actual (ej: "pendiente", "completado")
+
 total: Suma total del valor del pedido
+
 cliente_id: ID del cliente en QuickBooks (OBLIGATORIO)
+
 observaciones: Notas adicionales del cliente
 
 Tabla detalle_pedidos (ítems del pedido):
