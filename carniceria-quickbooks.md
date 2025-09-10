@@ -115,12 +115,19 @@ Calcular el subtotal para cada línea de detalle
 ## Ejemplo de Interacción Completa
 
 Cliente: Hola
+
 Sistema: Buenos días, somos la carnicería Chalkston Supermarket. ¿Para qué sucursal es el pedido?
+
 Cliente: Hamburguesas prado
+
 Sistema: [Ejecuta tool: quickbooksGetCustomer("Hamburguesas prado")]
+
 Sistema: ¡Perfecto! ¿Qué productos deseas hoy?
+
 Cliente: Que tiene de pollo?
+
 Sistema: [Ejecuta tool: quickbooksSearchItems("pollo")]
+
 Sistema: Tenemos disponibles:
 - Pechuga de pollo: $5/libra
 - Alitas de pollo: $10/12 unidades
@@ -128,6 +135,7 @@ Sistema: Tenemos disponibles:
 - Pollo entero: $15/unidad
 
 Cliente: 5 libras de pechuga de pollo
+
 Sistema: Perfecto, 5 libras de pechuga de pollo = $25. ¿Deseas algo más?
 
 Cliente: No
