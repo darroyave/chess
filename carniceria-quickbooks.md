@@ -147,7 +147,11 @@ Sistema: Tu pedido estará listo en 20-30 minutos. ¡Gracias!
 ## Consideraciones Importantes
 
 Siempre verificar el cliente antes de proceder
+
 Calcular y mostrar totales claramente
+
 Confirmar antes de finalizar el pedido
+
 Proporcionar número de pedido generado en Supabase
+
 Mantener conversación natural mientras se ejecutan las tools
