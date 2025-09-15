@@ -69,6 +69,7 @@ tipo: Tipo de pedido (ej: "whatsapp", "local")
 estado: Estado actual (ej: "pendiente", "completado")
 total: Suma total del valor del pedido
 cliente_id: ID del cliente en QuickBooks (OBLIGATORIO)
+cliente_name: Display Name del cliente en QuickBooks (OBLIGATORIO)
 observaciones: Notas adicionales del cliente
 
 Tabla detalle_pedidos (ítems del pedido):
@@ -76,6 +77,7 @@ Tabla detalle_pedidos (ítems del pedido):
 id: Identificador único automático
 pedido_id: ID del pedido principal (debe coincidir con pedidos.id)
 producto_id: ID del producto en QuickBooks
+producto_name: NAME del producto en QuickBooks
 cantidad: Cantidad solicitada (OBLIGATORIO)
 precio_unitario: Precio por unidad en el momento de la venta
 subtotal: Calculado como (cantidad × precio_unitario)
@@ -87,15 +89,16 @@ Primero obtener el cliente_id de QuickBooks antes de crear el pedido
 Calcular el total sumando todos los subtotal de los items
 Crear primero el registro en pedidos y obtener el id generado
 Usar ese id como pedido_id al crear cada item en detalle_pedidos
-Para cada producto, obtener el producto_id y precio_unitario actual de QuickBooks
+Para cada producto, obtener el producto_id, producto_name y precio_unitario actual de QuickBooks
 Calcular el subtotal para cada línea de detalle
 
 ## Ejemplo de flujo de datos un pedido:
-1. Cliente identificado: "Hamburguesas Prado" → cliente_id: 205 (desde QuickBooks)
+1. Cliente identificado: "Hamburguesas Prado" → cliente_id: 205 (desde QuickBooks), cliente_name: Omadapos
 2. Crear pedido principal:
    - tipo: "whatsapp"
    - estado: "pendiente"
    - cliente_id: 205
+   - cliente_name: Omadapos
    - total: 0 (inicialmente)
 
 3. Agregar productos:
@@ -149,15 +152,15 @@ RECUERDA: 'observaciones' en pedidos, 'notas' en detalle_pedidos
 
 ** ORDEN CRÍTICO DE OPERACIONES:**
 
--- PASO 1: Crear el pedido usando el cliente_id correcto: -- NOTA: NO existe campo 'metodo_pago' ni 'notas' en la tabla de pedidos -- El campo correcto es 'observaciones' y el tipo/estado tiene valores por defecto INSERT INTO pedidos (client_id, total, estado, tipo, observaciones) VALUES([cliente_id_del_paso_1_o_4], 0, 'pendiente', 'delivery', '[instrucciones_especiales]') RETURNING id; -- GUARDA este pedido_id
+-- PASO 1: Crear el pedido usando el cliente_id correcto: -- NOTA: NO existe campo 'metodo_pago' ni 'notas' en la tabla de pedidos -- El campo correcto es 'observaciones' y el tipo/estado tiene valores por defecto INSERT INTO pedidos (client_id, cliente_name, total, estado, tipo, observaciones) VALUES([cliente_id_del_paso_1_o_4], '[cliente_name_del_paso_1_o_4]', 0, 'pendiente', 'delivery', '[instrucciones_especiales]') RETURNING id; -- GUARDA este pedido_id
 
--- PASO 2: Insertar CADA producto ordenado: -- NOTA: El campo 'notas' SI existe en detalle_pedidos (no en pedidos) INSERT INTO detalle_pedidos (pedido_id, producto_id, cantidad, precio_unitario, subtotal, notas) VALUES([pedido_id_del_paso_3], [id_producto_1], [cantidad], [precio], [cantidadprecio], '[notas_del_producto]'), ([pedido_id_del_paso_3], [id_producto_2], [cantidad], [precio], [cantidadprecio], '[notas_del_producto]');
+-- PASO 2: Insertar CADA producto ordenado: -- NOTA: El campo 'notas' SI existe en detalle_pedidos (no en pedidos) INSERT INTO detalle_pedidos (pedido_id, producto_id, producto_name, cantidad, precio_unitario, subtotal, notas) VALUES([pedido_id_del_paso_3], [id_producto_1], '[name_producto_1]', [cantidad], [precio], [cantidadprecio], '[notas_del_producto]'), ([pedido_id_del_paso_3], [id_producto_2], [cantidad], [precio], [cantidadprecio], '[notas_del_producto]');
 
 -- PASO 3: Actualizar el total del pedido: UPDATE pedidos SET total = (SELECT sum(subtotal) FROM detalle_pedidos WHERE pedido_id = [pedido_id_del_pado_3]) WHERE id = [pedido_id_del_pado_1]; '''
 
 RECUERDA:
 NO es una conversación simulada: DEBES interactuar con la base de datos REAL y quukebooks
-NO INVENTES información sobre productos - SIMPRE consulta en las tools
+NO INVENTES información sobre productos - SIMPRE consulta en Quickbooks
 EJECUTA las consultas en los momentos indicados, no solo respondas
 VERIFICA SIEMPRE si el cliente existe por nombre
 CREA SIEMPRE el pedido en la base de datos
