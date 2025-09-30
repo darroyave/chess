@@ -66,7 +66,6 @@ Lo que tiene:
 Lo que falta:
 ❌ Modificar cantidad en el carrito - Actualmente no hay botones +/-
 ❌ Eliminar items del carrito - No hay botón de eliminar
-❌ Buscar productos - Búsqueda rápida por nombre
 ❌ Favoritos/Items rápidos - Acceso rápido a productos comunes
 ❌ Ver órdenes activas de una mesa - Historial antes de pagar
 ❌ Imprimir comanda - Para cocina
