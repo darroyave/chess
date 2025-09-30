@@ -38,9 +38,6 @@ Lo que tiene:
 ✅ Filtros por fecha
 
 Lo que falta:
-❌ Productos más vendidos - Top sellers
-❌ Ventas por categoría
-❌ Ventas por mesero
 ❌ Ventas por hora/día/mes - Gráficos de tendencias
 ❌ Tiempo promedio de servicio
 ❌ Tasa de ocupación de mesas
