@@ -9,8 +9,6 @@ Lo que falta:
 ✅ Modificación de órdenes - No hay forma de editar items de una orden ya enviada
 ✅ Cancelación de items individuales - Solo se puede eliminar toda la orden
 ✅ División de cuentas (Split Bill) - Dividir una cuenta entre varios clientes
-✅ Transferencia de items entre mesas
-✅ Notas especiales por item - Aunque existe en el modelo, no está implementado en el UI del menú
 ✅ Priorización de órdenes - Marcar órdenes como urgentes
 
 2. 💳 Sistema de Pagos
