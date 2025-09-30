@@ -14,7 +14,6 @@ Lo que falta:
 2. 💳 Sistema de Pagos
 
 Lo que falta COMPLETAMENTE:
-❌ División de pago - Diferentes métodos para una misma cuenta
 ❌ Cálculo de propinas - Porcentaje o monto fijo
 ❌ Descuentos y cupones
 ❌ Impuestos (IVA/Tax) - No se calcula IVA
