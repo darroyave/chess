@@ -14,9 +14,7 @@ Lo que falta:
 2. 💳 Sistema de Pagos
 
 Lo que falta COMPLETAMENTE:
-❌ Cálculo de propinas - Porcentaje o monto fijo
 ❌ Descuentos y cupones
-❌ Impuestos (IVA/Tax) - No se calcula IVA
 ❌ Recibos/Facturas - Generación de PDF
 ❌ Historial de pagos
 ❌ Devoluciones y reembolsos
