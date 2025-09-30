@@ -10,7 +10,6 @@ Lo que falta:
 ✅ Cancelación de items individuales - Solo se puede eliminar toda la orden
 ✅ División de cuentas (Split Bill) - Dividir una cuenta entre varios clientes
 ✅ Transferencia de items entre mesas
-✅ Unir mesas - Combinar órdenes de varias mesas
 ✅ Notas especiales por item - Aunque existe en el modelo, no está implementado en el UI del menú
 ✅ Priorización de órdenes - Marcar órdenes como urgentes
 
@@ -64,8 +63,6 @@ Lo que tiene:
 ✅ Enviar órdenes
 
 Lo que falta:
-❌ Modificar cantidad en el carrito - Actualmente no hay botones +/-
-❌ Eliminar items del carrito - No hay botón de eliminar
 ❌ Favoritos/Items rápidos - Acceso rápido a productos comunes
 ❌ Ver órdenes activas de una mesa - Historial antes de pagar
 ❌ Imprimir comanda - Para cocina
