@@ -149,33 +149,10 @@ Para análisis locales o respuesta sin conexión.
 
 <img width="580" height="181" alt="image" src="https://github.com/user-attachments/assets/f912ceca-ae9d-4191-826d-90402db477e1" />
 
-┌──────────────────────────────────────────────────────────────┐
-│                      FRONTEND POS (React + Electron)          │
-│ ┌──────────────────────────────────────────────────────────┐ │
-│ │  UI de Caja (React / Node.js)                            │ │
-│ │  - Pantalla de venta                                      │ │
-│ │  - Escáner de productos (listener de eventos)             │ │
-│ │  - Báscula integrada (peso dinámico)                      │ │
-│ │  - Botones para imprimir, cobrar, abrir gaveta, etc.      │ │
-│ └──────────────────────────────────────────────────────────┘ │
-│              ↓ REST / WebSocket (localhost / intranet)        │
-│                                                              │
-│       POS Service Layer (Node.js o Java microservices)        │
-│           │  (middleware de lógica y seguridad)               │
-│           ↓                                                   │
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │                  POSSUM (Spring Boot + JavaPOS)         │   │
-│  │  - Abstrae hardware POS (scanner, báscula, impresora)   │   │
-│  │  - Exposición por HTTP / JSON / WebSocket               │   │
-│  │  - Configuración dinámica vía jpos.xml                  │   │
-│  │  - Comunicación directa con JavaPOS drivers (Zebra, NCR)│   │
-│  └────────────────────────────────────────────────────────┘   │
-│           │                                                   │
-│           ↓                                                   │
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │      Hardware POS (Zebra MP7000, Epson, NCR, etc.)      │   │
-│  │      - JavaPOS Driver                                   │   │
-│  │      - OPOS / Serial / USB connection                   │   │
-│  └────────────────────────────────────────────────────────┘   │
-└──────────────────────────────────────────────────────────────┘
+| Etapa                         | Tecnología                     | Descripción                                              |
+| ----------------------------- | ------------------------------ | -------------------------------------------------------- |
+| **UI POS**                    | React + Electron               | Interfaz moderna, táctil, ligera, multiplataforma.       |
+| **Middleware local**          | Node.js                        | Coordina peticiones al backend POS y gestiona la sesión. |
+| **Microservicio de hardware** | POSSUM (Spring Boot + JavaPOS) | Expone el hardware POS como endpoints REST.              |
+| **Drivers físicos**           | JavaPOS (Zebra, Epson, etc.)   | Controladores certificados para cada periférico.         |
 
