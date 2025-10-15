@@ -35,11 +35,11 @@ Objetivo: comunicar React/Electron con dispositivos físicos y servicios de IA o
 
 🧱 Framework base
 
-Node.js (v22+)
+- Node.js (v22+)
 
-Fastify o NestJS (recomendado por estructura limpia y modular)
+- Fastify o NestJS (recomendado por estructura limpia y modular)
 
-TypeScript
+- TypeScript
 
 🔌 Librerías clave
 
