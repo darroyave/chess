@@ -149,6 +149,8 @@ Para análisis locales o respuesta sin conexión.
 
 <img width="580" height="181" alt="image" src="https://github.com/user-attachments/assets/f912ceca-ae9d-4191-826d-90402db477e1" />
 
+⚙️ 1. Flujo de comunicación
+
 | Etapa                         | Tecnología                     | Descripción                                              |
 | ----------------------------- | ------------------------------ | -------------------------------------------------------- |
 | **UI POS**                    | React + Electron               | Interfaz moderna, táctil, ligera, multiplataforma.       |
