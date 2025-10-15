@@ -43,8 +43,14 @@ Objetivo: comunicar React/Electron con dispositivos físicos y servicios de IA o
 
 🔌 Librerías clave
 
-- dayjs → manejo de fechas y horas.
+| Función          | Librería                      | Uso                                      |
+| ---------------- | ----------------------------- | ---------------------------------------- |
+| USB y HID        | `node-hid`                    | Lectura directa de escáneres o básculas. |
+| Serial (COM)     | `serialport`                  | Conexión a balanzas RS232.               |
+| Impresión        | `escpos` o `electron-printer` | Tickets, reportes, apertura de gaveta.   |
+| WebSocket        | `socket.io`                   | Canal bidireccional con React.           |
+| REST API         | `axios`                       | Comunicación con JavaPOS o la nube.      |
+| Seguridad        | `helmet` + `jsonwebtoken`     | Protección local de endpoints.           |
+| Base local       | `sqlite3` o `lowdb`           | Cacheo local de productos.               |
+| Envío a Supabase | `@supabase/supabase-js`       | Sincronización de ventas o clientes.     |
 
-- socket.io-client → conexión en tiempo real con el middleware Node.js.
-
-- axios → consumo de APIs locales o remotas.
