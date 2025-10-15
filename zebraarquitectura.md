@@ -16,7 +16,8 @@ Framer Motion → animaciones fluidas.
 
 Zustand → manejo global de estado (carrito, usuario, sesión).
 
-React Router → navegación entre pantallas (ventas, reportes, configuración).
+. React Router → navegación entre pantallas (ventas, reportes, configuración).
+
 
 🧠 Librerías complementarias
 
