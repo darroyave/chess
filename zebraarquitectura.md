@@ -4,7 +4,7 @@ Objetivo: crear una interfaz táctil, rápida y elegante con soporte offline y c
 
 🔧 Frameworks principales
 
-Electron → convierte tu app en programa de escritorio.
+- Electron → convierte tu app en programa de escritorio.
 
 React + TypeScript → interfaz modular y moderna.
 
@@ -16,7 +16,7 @@ Framer Motion → animaciones fluidas.
 
 Zustand → manejo global de estado (carrito, usuario, sesión).
 
-. React Router → navegación entre pantallas (ventas, reportes, configuración).
+React Router → navegación entre pantallas (ventas, reportes, configuración).
 
 
 🧠 Librerías complementarias
