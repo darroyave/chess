@@ -29,6 +29,20 @@ Objetivo: crear una interfaz táctil, rápida y elegante con soporte offline y c
 
 - react-hook-form → formularios rápidos y seguros.
 
+⚙️ 2. MIDDLEWARE LOCAL — Conexión con Hardware
+
+Objetivo: comunicar React/Electron con dispositivos físicos y servicios de IA o backend.
+
+🧱 Framework base
+
+Node.js (v22+)
+
+Fastify o NestJS (recomendado por estructura limpia y modular)
+
+TypeScript
+
+🔌 Librerías clave
+
 - dayjs → manejo de fechas y horas.
 
 - socket.io-client → conexión en tiempo real con el middleware Node.js.
