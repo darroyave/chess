@@ -70,3 +70,88 @@ Objetivo: hablar directamente con hardware POS de marcas como Zebra, NCR o Epson
 
 - Tomcat Embedded (ya incluido en Spring Boot)
 
+📦 Dependencias clave
+
+| Función                     | Librería                        |
+| --------------------------- | ------------------------------- |
+| Configuración de hardware   | `jpos.xml`                      |
+| Controladores Zebra         | `Zebra JavaPOS Driver`          |
+| Controladores NCR           | `NCR JavaPOS`                   |
+| Impresoras Epson            | `Epson JavaPOS ADK`             |
+| Comunicación HTTP/WebSocket | `spring-boot-starter-websocket` |
+| Logs                        | `logback` o `slf4j`             |
+
+☁️ 4. BACKEND CLOUD / IA
+
+Objetivo: integrar inteligencia artificial, sincronización de datos y facturación.
+
+| Área                      | Servicio / Tecnología                | Propósito                                    |
+| ------------------------- | ------------------------------------ | -------------------------------------------- |
+| Base de datos             | **Supabase (PostgreSQL + PGVector)** | Clientes, órdenes, productos, IA embeddings. |
+| Automatización            | **n8n**                              | Flujos de pedidos, IA y notificaciones.      |
+| Facturación               | **QuickBooks Online API**            | Facturas, pagos, sincronización contable.    |
+| IA y lenguaje             | **OpenAI GPT-4o / Anthropic Claude** | Procesamiento de lenguaje natural.           |
+| Voz                       | **ElevenLabs + Twilio Voice**        | Llamadas y pedidos automáticos.              |
+| Hosting de microservicios | **Render / Fly.io / Railway**        | Despliegue fácil del Node.js y Java backend. |
+| Logs centralizados        | **Logtail / Grafana Loki**           | Monitoreo de logs.                           |
+| Monitoreo                 | **Uptime Kuma / Prometheus**         | Disponibilidad del sistema.                  |
+
+🧠 5. IA LOCAL OPCIONAL (sin internet)
+
+Para análisis locales o respuesta sin conexión.
+
+Ollama → ejecutar modelos LLM locales (llama3, phi3, mistral).
+
+LM Studio → interfaz visual para probar modelos locales.
+
+LangChain JS → para orquestar herramientas IA locales.
+
+Whisper.cpp → reconocimiento de voz offline.
+
+🧾 6. DESARROLLO Y DEVOPS
+💻 IDE y herramientas
+
+Visual Studio Code → editor principal.
+
+Postman / Bruno → pruebas de APIs locales.
+
+Git + GitHub → control de versiones.
+
+Docker → contenerizar servicios locales.
+
+Render / Vercel / Railway → hosting del middleware y backend.
+
+Supabase Studio → panel visual de base de datos.
+
+🧰 Utilidades complementarias
+
+| Propósito                 | Herramienta             |
+| ------------------------- | ----------------------- |
+| Diseño UI                 | **Figma**               |
+| Modelado de base de datos | **dbdiagram.io**        |
+| Documentación             | **Docusaurus / Notion** |
+| Pruebas                   | **Jest / Playwright**   |
+| Logs locales              | **Winston / Pino**      |
+
+🖥️ 7. HARDWARE SOPORTADO
+
+| Dispositivo         | Marca / Modelo                | Interfaz                      |
+| ------------------- | ----------------------------- | ----------------------------- |
+| Escáner             | Zebra MP7000                  | USB / RS232                   |
+| Báscula             | NCR 7879 / Datalogic          | Serial / JavaPOS              |
+| Impresora térmica   | Epson TM-T88 / Star Micronics | USB / OPOS / JavaPOS          |
+| Gaveta de efectivo  | APG / Custom                  | RJ11 / Puerto impresora       |
+| Lector de tarjetas  | Ingenico / Verifone           | Integración por API o red     |
+| Pantalla secundaria | HDMI / USB                    | Para mostrar totales o promos |
+
+🧭 ESTRUCTURA GENERAL DEL PROYECTO
+
+/supermarket-pos/
+ ├── frontend/         (React + Electron + Tailwind + Zustand)
+ ├── middleware/       (Node.js + Fastify + Socket.IO + HID)
+ ├── backend-java/     (Spring Boot + JavaPOS + POSSUM)
+ ├── cloud-services/   (n8n + Supabase + QuickBooks)
+ ├── ai/               (Ollama + LangChain + Whisper)
+ └── docs/             (diagramas, prompts, configuraciones)
+
+
