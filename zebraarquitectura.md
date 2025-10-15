@@ -54,3 +54,19 @@ Objetivo: comunicar React/Electron con dispositivos físicos y servicios de IA o
 | Base local       | `sqlite3` o `lowdb`           | Cacheo local de productos.               |
 | Envío a Supabase | `@supabase/supabase-js`       | Sincronización de ventas o clientes.     |
 
+☕ 3. BACKEND DE HARDWARE — JavaPOS / POSSUM
+
+Objetivo: hablar directamente con hardware POS de marcas como Zebra, NCR o Epson.
+
+🔧 Framework base
+
+- Java 17+
+
+- Spring Boot 3+
+
+- JavaPOS SDK (dependiendo del fabricante)
+
+- POSSUM (open source) como capa de abstracción
+
+- Tomcat Embedded (ya incluido en Spring Boot)
+
