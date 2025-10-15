@@ -17,3 +17,19 @@ Framer Motion → animaciones fluidas.
 Zustand → manejo global de estado (carrito, usuario, sesión).
 
 React Router → navegación entre pantallas (ventas, reportes, configuración).
+
+🧠 Librerías complementarias
+
+AG Grid o TanStack Table → grillas de productos y tickets.
+
+React Icons / Lucide React → íconos SVG profesionales.
+
+react-hot-toast → notificaciones modernas.
+
+react-hook-form → formularios rápidos y seguros.
+
+dayjs → manejo de fechas y horas.
+
+socket.io-client → conexión en tiempo real con el middleware Node.js.
+
+axios → consumo de APIs locales o remotas.
