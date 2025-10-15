@@ -158,3 +158,55 @@ Para análisis locales o respuesta sin conexión.
 | **Microservicio de hardware** | POSSUM (Spring Boot + JavaPOS) | Expone el hardware POS como endpoints REST.              |
 | **Drivers físicos**           | JavaPOS (Zebra, Epson, etc.)   | Controladores certificados para cada periférico.         |
 
+🌐 2. Ejemplo real de comunicación
+
+Cuando un cajero pesa un producto:
+
+1. React envía:
+
+fetch("http://localhost:8080/devices/Zebra_MP7000_Scale/weight")
+
+2. POSSUM responde (JSON):
+
+{ "device": "Zebra_MP7000_Scale", "weight": 1263, "unit": "g" }
+
+3. React actualiza el UI con el nuevo peso y calcula el precio total.
+
+Cuando el cliente paga:
+
+- React → POST /devices/Printer/print
+
+- POSSUM → JavaPOS → impresora física → imprime ticket.
+
+Todo ocurre en menos de 150 ms, en local.
+
+⚡ 3. Ventajas de este enfoque
+
+✅ Aislamiento del hardware: React / Node.js nunca tocan los drivers directamente.
+✅ Portabilidad: pueden cambiar de Windows POSReady → Linux POS sin reescribir nada.
+✅ Reutilización: el mismo microservicio POSSUM sirve para muchas tiendas.
+✅ Integración con cloud: los POS locales se comunican con servicios centrales vía APIs.
+✅ Menor latencia: las llamadas son locales (localhost), sin ir a internet.
+
+🧠 4. Tecnologías clave que usan
+
+| Capa                   | Tecnología                    | Uso                                           |
+| ---------------------- | ----------------------------- | --------------------------------------------- |
+| Interfaz POS           | **React + Electron**          | UI moderna, local o híbrida.                  |
+| Lógica intermedia      | **Node.js + Express**         | Manejo de sesiones, órdenes y flujo de venta. |
+| Microservicio hardware | **Spring Boot + POSSUM**      | Control de dispositivos vía HTTP.             |
+| Controladores hardware | **JavaPOS / OPOS**            | Acceso al hardware certificado.               |
+| DevOps                 | **Docker + Kubernetes + GCP** | Despliegue centralizado y escalable.          |
+
+🧩 5. Cómo tú puedes replicar este modelo
+
+Tú puedes hacer la misma arquitectura con tu MP7000:
+
+1. Backend hardware: POSSUM configurado para Zebra MP7000.
+
+2. Middleware local: Node.js (para recibir pedidos, coordinar báscula e impresión).
+
+3. Frontend POS: React (para mostrar peso, productos, totales).
+
+4. Integración n8n / Supabase / QuickBooks: tu capa cloud para órdenes y facturación.
+
