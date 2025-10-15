@@ -100,28 +100,29 @@ Objetivo: integrar inteligencia artificial, sincronización de datos y facturaci
 
 Para análisis locales o respuesta sin conexión.
 
-Ollama → ejecutar modelos LLM locales (llama3, phi3, mistral).
+- Ollama → ejecutar modelos LLM locales (llama3, phi3, mistral).
 
-LM Studio → interfaz visual para probar modelos locales.
+- LM Studio → interfaz visual para probar modelos locales.
 
-LangChain JS → para orquestar herramientas IA locales.
+- LangChain JS → para orquestar herramientas IA locales.
 
-Whisper.cpp → reconocimiento de voz offline.
+- Whisper.cpp → reconocimiento de voz offline.
 
 🧾 6. DESARROLLO Y DEVOPS
+
 💻 IDE y herramientas
 
-Visual Studio Code → editor principal.
+- Visual Studio Code → editor principal.
 
-Postman / Bruno → pruebas de APIs locales.
+- Postman / Bruno → pruebas de APIs locales.
 
-Git + GitHub → control de versiones.
+- Git + GitHub → control de versiones.
 
-Docker → contenerizar servicios locales.
+- Docker → contenerizar servicios locales.
 
-Render / Vercel / Railway → hosting del middleware y backend.
+- Render / Vercel / Railway → hosting del middleware y backend.
 
-Supabase Studio → panel visual de base de datos.
+- Supabase Studio → panel visual de base de datos.
 
 🧰 Utilidades complementarias
 
