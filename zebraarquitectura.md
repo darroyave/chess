@@ -155,4 +155,3 @@ Para análisis locales o respuesta sin conexión.
  ├── ai/               (Ollama + LangChain + Whisper)
  └── docs/             (diagramas, prompts, configuraciones)
 
-
