@@ -21,16 +21,16 @@ Objetivo: crear una interfaz táctil, rápida y elegante con soporte offline y c
 
 🧠 Librerías complementarias
 
-AG Grid o TanStack Table → grillas de productos y tickets.
+- AG Grid o TanStack Table → grillas de productos y tickets.
 
-React Icons / Lucide React → íconos SVG profesionales.
+- React Icons / Lucide React → íconos SVG profesionales.
 
-react-hot-toast → notificaciones modernas.
+- react-hot-toast → notificaciones modernas.
 
-react-hook-form → formularios rápidos y seguros.
+- react-hook-form → formularios rápidos y seguros.
 
-dayjs → manejo de fechas y horas.
+- dayjs → manejo de fechas y horas.
 
-socket.io-client → conexión en tiempo real con el middleware Node.js.
+- socket.io-client → conexión en tiempo real con el middleware Node.js.
 
-axios → consumo de APIs locales o remotas.
+- axios → consumo de APIs locales o remotas.
