@@ -147,11 +147,4 @@ Para análisis locales o respuesta sin conexión.
 
 🧭 ESTRUCTURA GENERAL DEL PROYECTO
 
-/supermarket-pos/
- ├── frontend/         (React + Electron + Tailwind + Zustand)
- ├── middleware/       (Node.js + Fastify + Socket.IO + HID)
- ├── backend-java/     (Spring Boot + JavaPOS + POSSUM)
- ├── cloud-services/   (n8n + Supabase + QuickBooks)
- ├── ai/               (Ollama + LangChain + Whisper)
- └── docs/             (diagramas, prompts, configuraciones)
-
+<img width="580" height="181" alt="image" src="https://github.com/user-attachments/assets/f912ceca-ae9d-4191-826d-90402db477e1" />
