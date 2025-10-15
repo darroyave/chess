@@ -6,17 +6,17 @@ Objetivo: crear una interfaz táctil, rápida y elegante con soporte offline y c
 
 - Electron → convierte tu app en programa de escritorio.
 
-React + TypeScript → interfaz modular y moderna.
+- React + TypeScript → interfaz modular y moderna.
 
-Vite → para desarrollo rápido y empaquetado ágil.
+- Vite → para desarrollo rápido y empaquetado ágil.
 
-TailwindCSS + ShadCN/UI → estilos corporativos, responsivos y limpios.
+- TailwindCSS + ShadCN/UI → estilos corporativos, responsivos y limpios.
 
-Framer Motion → animaciones fluidas.
+- Framer Motion → animaciones fluidas.
 
-Zustand → manejo global de estado (carrito, usuario, sesión).
+- Zustand → manejo global de estado (carrito, usuario, sesión).
 
-React Router → navegación entre pantallas (ventas, reportes, configuración).
+- React Router → navegación entre pantallas (ventas, reportes, configuración).
 
 
 🧠 Librerías complementarias
